@@ -41,7 +41,20 @@ public class Main {
                 minimum = currentInt;
             }
         }
+        System.out.printf("Minimum chars: %d, Maximum chars: %d\n", minimum, maximum);
 
-        System.out.printf("Minimum chars: %d, Maximum chars: %d", minimum, maximum);
+        // Альтернативный подсчет мин и макс
+        minimum = Integer.MAX_VALUE;
+        maximum = Integer.MIN_VALUE;
+        Integer[] values = charDistribution.values().toArray(new Integer[0]);
+        for (Integer value: values) {
+            if (value > maximum) {
+                maximum = value;
+            }
+            if (value < minimum) {
+                minimum = value;
+            }
+        }
+        System.out.printf("Minimum chars: %d, Maximum chars: %d\n", minimum, maximum);
     }
 }
