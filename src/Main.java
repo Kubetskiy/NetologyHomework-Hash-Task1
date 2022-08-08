@@ -21,11 +21,7 @@ public class Main {
 
         // Основной цикл
         for (char c : chars) {
-            if (charDistribution.containsKey(c)) {
-                charDistribution.put(c, charDistribution.get(c) + 1);
-            } else {
-                charDistribution.put(c, 1);
-            }
+            charDistribution.put(c, charDistribution.getOrDefault(c, 0) + 1);
         }
 
         // Ищем просто мин и макс
